@@ -43,10 +43,10 @@ const ImageToPDF: React.FC = () => {
             <div className="space-y-6">
                 {images.length === 0 ? <FileUpload onFileSelect={handleFileSelect} accept="image/*" multiple /> : (
                     <div className="space-y-6">
-                        <div className="grid grid-cols-4 gap-4">
+                        <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
                             {images.map(img => (
                                 <div key={img.id} className="relative group aspect-square">
-                                    <img src={img.preview} alt="preview" className="w-full h-full object-cover rounded" />
+                                    <img src={img.preview} alt="preview" className="w-full h-full object-cover preview-image" />
                                 </div>
                             ))}
                         </div>

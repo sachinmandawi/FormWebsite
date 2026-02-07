@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
+import Logo from './Logo';
 
 const Navbar: React.FC = () => {
     const { theme, toggleTheme } = useTheme();
@@ -16,28 +17,23 @@ const Navbar: React.FC = () => {
     ];
 
     return (
-        <nav className="sticky top-0 z-50 glass border-b border-slate-200 dark:border-slate-800">
+        <nav className="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-1">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16 items-center">
+                <div className="flex justify-between h-14 items-center">
                     <div className="flex items-center">
-                        <Link to="/" className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white">
-                                <span className="font-bold text-xl">F</span>
-                            </div>
-                            <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white">
-                                FormTools<span className="text-primary-600">India</span>
-                            </span>
+                        <Link to="/" className="hover:opacity-80 transition-opacity">
+                            <Logo size={28} showText={true} />
                         </Link>
                     </div>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-10">
                         {navLinks.map((link) => (
                             <NavLink
                                 key={link.path}
                                 to={link.path}
                                 className={({ isActive }) =>
-                                    `text-sm font-medium transition-colors hover:text-primary-600 ${isActive ? 'text-primary-600' : 'text-slate-600 dark:text-slate-300'
+                                    `text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:text-indigo-600 ${isActive ? 'text-indigo-600' : 'text-slate-500 dark:text-slate-400'
                                     }`
                                 }
                             >

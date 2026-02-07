@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://formtoolsindia.com/sitemap.xml
+Sitemap: https://redkael.me/sitemap.xml

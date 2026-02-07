@@ -38,10 +38,10 @@ const MergePDF: React.FC = () => {
             <div className="space-y-6">
                 {pdfs.length === 0 ? <FileUpload onFileSelect={handleFileSelect} accept=".pdf" multiple /> : (
                     <div className="space-y-6">
-                        <div className="space-y-2">
+                        <div className="space-y-3">
                             {pdfs.map(p => (
-                                <div key={p.id} className="p-3 border rounded-xl flex items-center justify-between">
-                                    <span className="text-sm truncate">{p.file.name}</span>
+                                <div key={p.id} className="p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl flex items-center justify-between bg-white dark:bg-slate-800 shadow-md">
+                                    <span className="text-base font-bold truncate">{p.file.name}</span>
                                 </div>
                             ))}
                         </div>

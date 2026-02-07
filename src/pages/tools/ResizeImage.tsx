@@ -30,8 +30,14 @@ const ResizeImage: React.FC = () => {
             {!image ? <FileUpload onFileSelect={f => { setImage(f[0]); setWidth(500); setHeight(500); }} accept="image/*" /> : (
                 <div className="space-y-6">
                     <div className="grid grid-cols-2 gap-4">
-                        <input type="number" value={width} onChange={e => setWidth(parseInt(e.target.value))} className="p-3 border rounded" />
-                        <input type="number" value={height} onChange={e => setHeight(parseInt(e.target.value))} className="p-3 border rounded" />
+                        <div>
+                            <label className="text-sm font-bold mb-2 block">Width (px)</label>
+                            <input type="number" value={width} onChange={e => setWidth(parseInt(e.target.value))} className="w-full p-4 border-2 border-slate-300 dark:border-slate-700 rounded-lg text-lg font-bold bg-white dark:bg-slate-800" />
+                        </div>
+                        <div>
+                            <label className="text-sm font-bold mb-2 block">Height (px)</label>
+                            <input type="number" value={height} onChange={e => setHeight(parseInt(e.target.value))} className="w-full p-4 border-2 border-slate-300 dark:border-slate-700 rounded-lg text-lg font-bold bg-white dark:bg-slate-800" />
+                        </div>
                     </div>
                     <button onClick={resize} className="w-full btn-primary py-4">Resize & Download</button>
                 </div>
